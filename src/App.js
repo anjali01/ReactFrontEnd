@@ -6,9 +6,10 @@ import Dropdown from './Dropdown.js'
 class App extends Component {
   constructor(props) {
     super(props);
-    var currentState={currentCountry=''};
+    this.currentState = {
+      currentCountry: ''
+    };
   }
-
 
   render() {
     return (

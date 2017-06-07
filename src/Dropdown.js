@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 
 class Dropdown extends Component {
+    changeList(name, code) {
+
+    }
+
     render() {
         return (
             <div>
