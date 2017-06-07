@@ -9,12 +9,12 @@ class State extends Component {
         };
     }
     
-    componentDidMount() {
+    componentWillRecieveProps(nextProps) {
         fetch('http://localhost:8000/api/countries/' + '/states/').then(
             (response) => {
                 response.json().then(
                     (json) => {
-                        this.setState({listStates: json});
+                        nextProps.setState({listStates: json});
                     }
                 );
             }

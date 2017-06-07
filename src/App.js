@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Country from './Country.js'
-
+import State from './State.js'
 
 class App extends Component {
   constructor(props) {
@@ -26,6 +26,7 @@ class App extends Component {
         </div>
         <p className="App-intro">
           <Country onChange={this.handleChange}/>
+          <State currentCountry={this.state.currentCountry}/>
         </p>
       </div>
     );
