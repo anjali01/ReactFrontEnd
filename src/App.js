@@ -12,8 +12,8 @@ class App extends Component {
     };
   }
 
-  handleChange(event) {
-    this.setState({currentCountry: event.target.currentCountry});
+  handleChange = (event) => {
+    this.setState({currentCountry: event.target.value});
   }
 
 

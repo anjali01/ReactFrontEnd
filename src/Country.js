@@ -23,7 +23,7 @@ class Country extends Component {
 
     render() {
         return (
-            <Dropdown countryList={this.state.listCountries}/>
+            <Dropdown arrayList={this.state.listCountries} onChange={this.props.onChange}/>
         )
     }
 }

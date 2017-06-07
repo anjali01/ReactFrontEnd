@@ -9,12 +9,13 @@ class State extends Component {
         };
     }
     
-    componentWillRecieveProps(nextProps) {
-        fetch('http://localhost:8000/api/countries/' + '/states/').then(
+    componentWillReceiveProps(nextProps) {
+        fetch('http://localhost:8000/api/countries/' + nextProps.currentCountry + '/states/').then(
             (response) => {
+                console.log('made it to the first level');
                 response.json().then(
                     (json) => {
-                        nextProps.setState({listStates: json});
+                        this.setState({listStates: json});
                     }
                 );
             }
@@ -23,7 +24,7 @@ class State extends Component {
 
     render() {
         return (
-            <Dropdown stateList={this.state.listStates}/>
+            <Dropdown arrayList={this.state.listStates}/>
         )
     }
 }
