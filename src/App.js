@@ -1,15 +1,21 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Dropdown from './Dropdown.js'
+import Country from './Country.js'
+
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.currentState = {
+    this.state = {
       currentCountry: ''
     };
   }
+
+  handleChange(event) {
+    this.setState({currentCountry: event.target.currentCountry});
+  }
+
 
   render() {
     return (
@@ -19,7 +25,7 @@ class App extends Component {
           <h2>Country-State Matching!</h2>
         </div>
         <p className="App-intro">
-          <Dropdown />
+          <Country onChange={this.handleChange}/>
         </p>
       </div>
     );

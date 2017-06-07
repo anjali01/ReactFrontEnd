@@ -2,24 +2,30 @@ import React, { Component } from 'react';
 import Dropdown from './Dropdown.js';
 
 class Country extends Component {
-    compondentDidMoud() {
-        fetch('http://localhost:8000/api/countries/').then(function(response) {
-            method: 'get'
-        }).catch(function(err) {
-
-        });
+    constructor(props) {
+        super(props);
+        this.state = {
+            listCountries: []
+        };
+    }
+    
+    componentDidMount() {
+        fetch('http://localhost:8000/api/countries/').then(
+            (response) => {
+                response.json().then(
+                    (json) => {
+                        this.setState({listCountries: json});
+                    }
+                );
+            }
+        );
     }
 
     render() {
         return (
-            
-        );
+            <Dropdown countryList={this.state.listCountries}/>
+        )
     }
 }
-
-Country.propTypes = {
-    name: React.propTypes.string,
-    code: React.propTypes.string,
-};
 
 export default Country;
